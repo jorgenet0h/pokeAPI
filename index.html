@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Batalha Pokémon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-layout">
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="header-ball"></div>
+            <h2>THE<br>SIDE<br>DEX</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <button class="nav-btn active" data-target="page-battle">⚔ BATALHA</button>
+            <button class="nav-btn" data-target="page-pokedex"> POKÉDEX</button>
+            <button class="nav-btn" data-target="page-options">OPÇÕES</button>
+            <button class="nav-btn" data-target="page-about">? SOBRE</button>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="nav-btn">DESFAZER</button>
+            <button class="nav-btn">SALVAR</button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section id="page-battle" class="page-section active">
+
+            <header class="top-bar">
+                <h1>GERADOR DE BATALHA</h1>
+            </header>
+
+            <section class="team-container team-red">
+                <div class="team-header-bar"></div>
+                <div class="team-header">
+                    TIME VERMELHO ▶
+                    <button class="btn-random" id="btn-random-red">🎲</button>
+                </div>
+                
+                <div class="cards-row">
+                    <article class="poke-card-slot" id="card-red-1">
+                        <div class="card-inner">
+                            <div class="card-top"><span class="poke-id">???</span></div>
+                            <div class="sprite-wrapper">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
+                            </div>
+                            <div class="hp-bar-wrap">
+                                <div class="hp-label">STATS:</div>
+                                <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
+                            </div>
+                            <input type="text" class="card-input" placeholder="NOME/ID">
+                            <div class="type-badges"></div>
+                        </div>
+                    </article>
+
+                    <article class="poke-card-slot" id="card-red-2">
+                        <div class="card-inner">
+                            <div class="card-top"><span class="poke-id">???</span></div>
+                            <div class="sprite-wrapper">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
+                            </div>
+                            <div class="hp-bar-wrap">
+                                <div class="hp-label">STATS:</div>
+                                <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
+                            </div>
+                            <input type="text" class="card-input" placeholder="NOME/ID">
+                            <div class="type-badges"></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="versus-row">
+                <div class="dialogue-box" id="dialogue-text">Insira os nomes<br>e lute!</div>
+                <div class="battle-menu">
+                    <button class="menu-btn fight" id="btn-fight">⚔ LUTAR!</button>
+                    <button class="menu-btn" id="btn-bag">MOCHILA</button>
+                    <button class="menu-btn" id="btn-mon">POKÉMON</button>
+                    <button class="menu-btn" id="btn-run">FUGIR</button>
+                </div>
+            </div>
+
+            <section class="team-container team-blue">
+                <div class="team-header-bar"></div>
+                <div class="team-header">
+                    TIME AZUL ▶
+                    <button class="btn-random" id="btn-random-blue">🎲</button>
+                </div>
+                
+                <div class="cards-row">
+                    <article class="poke-card-slot" id="card-blue-1">
+                        <div class="card-inner">
+                            <div class="card-top"><span class="poke-id">???</span></div>
+                            <div class="sprite-wrapper">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
+                            </div>
+                            <div class="hp-bar-wrap">
+                                <div class="hp-label">STATS:</div>
+                                <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
+                            </div>
+                            <input type="text" class="card-input" placeholder="NOME/ID">
+                            <div class="type-badges"></div>
+                        </div>
+                    </article>
+
+                    <article class="poke-card-slot" id="card-blue-2">
+                        <div class="card-inner">
+                            <div class="card-top"><span class="poke-id">???</span></div>
+                            <div class="sprite-wrapper">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
+                            </div>
+                            <div class="hp-bar-wrap">
+                                <div class="hp-label">STATS:</div>
+                                <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
+                            </div>
+                            <input type="text" class="card-input" placeholder="NOME/ID">
+                            <div class="type-badges"></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </section>
+
+        <section id="page-pokedex" class="page-section">
+            <h1>FILTROS DA POKÉDEX</h1>
+            <p>Conteúdo da Pokedex aqui...</p>
+        </section>
+
+        <section id="page-options" class="page-section">
+            <h1>CONFIGURAÇÕES</h1>
+            <p>Opções do jogo...</p>
+        </section>
+
+        <section id="page-about" class="page-section">
+            <h1>? SOBRE O PROJETO</h1>
+            <p>Simulador de batalha PokeAPI.</p>
+        </section>
+
+    </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
