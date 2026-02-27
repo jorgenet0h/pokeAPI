@@ -85,12 +85,22 @@
     animation: ab-fadein .6s ease 1s both;
 }
 
+
 .ab-hero-press {
     font-family: var(--font);
     font-size: .62rem;
     color: var(--electric);
     letter-spacing: .15em;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
     animation: ab-blink 1.2s step-end 1.4s infinite;
+}
+
+.ab-hero-press:focus-visible {
+    outline: 3px solid var(--electric);
+    outline-offset: 6px;
 }
 
 
@@ -301,10 +311,17 @@
 
 .ab-move-icon { font-size: 1.4rem; flex-shrink: 0; }
 
-.ab-move-info { display: flex; flex-direction: column; gap: .15rem; }
+.ab-move-info {
+    display: flex; flex-direction: column; gap: .45rem;
+}
 
-.ab-move-name { font-family: var(--font); font-size: .5rem;  color: var(--poke-red); }
-.ab-move-desc { font-family: var(--font); font-size: .48rem; color: var(--gray); line-height: 1.6; }
+.ab-move-name {
+    font-family: var(--font); font-size: .5rem; color: var(--poke-red); line-height: 1.5; display: block;
+}
+
+.ab-move-desc {
+    font-family: var(--font); font-size: .48rem; color: var(--gray); line-height: 1.8;
+}
 
 
 /* Tecnologias */
@@ -444,5 +461,4 @@
     .ab-grid-2           { grid-template-columns: 1fr; }
     .ab-moves            { grid-template-columns: 1fr; }
     .ab-trainers         { grid-template-columns: 1fr; }
-
 }
