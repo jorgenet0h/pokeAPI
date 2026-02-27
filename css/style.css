@@ -185,14 +185,17 @@ html, body {
 .ground { background: var(--ground); color:#000; text-shadow:none; } .ghost { background: var(--ghost); } .steel { background: var(--steel); color:#000; text-shadow:none; }
 .normal { background: var(--normal); color:#000; text-shadow:none; } .bug { background: var(--bug); } .flying { background: var(--flying); color:#000; text-shadow:none; }
 
-.pokedex-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 10px 0; }
+.pokedex-grid { display: grid; grid-template-columns: repeat(2, 380px); gap: 20px; padding: 10px 0; margin: 0 auto; }
 .pokedex-card {
     background: var(--cream); border: var(--win); box-shadow: 4px 4px 0 var(--black);
     display: flex; flex-direction: column; overflow: hidden;
 }
-.pokedex-card-header {
-    background: var(--poke-red); color: var(--white); padding: 8px 10px;
-    font-size: 0.5rem; border-bottom: var(--win); text-shadow: 1px 1px 0 var(--black);
+.pokedex-card-stripe { height: 10px; }
+.red-top  .pokedex-card-stripe { background: var(--poke-red); }
+.blue-top .pokedex-card-stripe { background: var(--poke-blue2); }
+
+.pokedex-card-title {
+    padding: 6px 10px; font-size: 0.5rem; border-bottom: var(--win);
 }
 .pokedex-card-body {
     background: var(--cream2); padding: 15px; display: flex; gap: 15px; align-items: center; flex: 1;
