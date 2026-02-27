@@ -204,5 +204,6 @@ html, body {
 }
 
 .pokedex-sprite { width: 70px; height: 70px; object-fit: contain; padding-bottom: 4px; }
+.pokedex-sprite-wrapper:hover .pokedex-sprite { animation: hop 0.45s steps(1) infinite; }
 .pokedex-info { display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .pokedex-stat { font-size: 0.45rem; line-height: 1.6; }
