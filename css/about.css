@@ -461,4 +461,6 @@
     .ab-grid-2           { grid-template-columns: 1fr; }
     .ab-moves            { grid-template-columns: 1fr; }
     .ab-trainers         { grid-template-columns: 1fr; }
+    .ab-credits-text { font-size: 0.65rem; }
+    .ab-footer { font-size: 0.45rem; }
 }

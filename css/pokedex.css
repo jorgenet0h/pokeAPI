@@ -18,3 +18,16 @@
 .pokedex-sprite-wrapper:hover .pokedex-sprite { animation: hop 0.45s steps(1) infinite; }
 .pokedex-info { display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .pokedex-stat { font-size: 0.45rem; line-height: 1.6; }
+
+@media (max-width: 768px) {
+    
+    .pokedex-grid { 
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .pokedex-card {
+        width: 100%;
+    }
+}

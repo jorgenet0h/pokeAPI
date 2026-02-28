@@ -1,8 +1,3 @@
-
-/* =============================================
-   PÁGINA DE OPÇÕES — cole no FINAL do style.css
-   ============================================= */
-
 /* Painel com moldura vermelha */
 .opt-panel {
     width: 50vw;
@@ -289,4 +284,45 @@
 .music-btn:active {
     transform: translate(2px, 2px);
     box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    .opt-panel, 
+    .opt-dialogue {
+        width: 90vw;
+        padding: 15px;
+    }
+
+    .opt-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .opt-btns {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .opt-btn {
+        flex: 1;
+        min-width: 0; 
+    }
+
+    .opt-actions {
+        flex-direction: column;
+        width: 90vw;
+        gap: 12px;
+        margin: 0 auto;
+    }
+    
+    .opt-action-btn {
+        max-width: 100%; 
+        width: 100%;
+    }
+
+    .opt-label { font-size: 0.7rem; }
+    .opt-dialogue { font-size: 0.7rem; line-height: 2.2; }
+    .opt-btn { font-size: 0.55rem; }
 }
