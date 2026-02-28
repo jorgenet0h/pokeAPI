@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/opcoes.css">
 </head>
 <body>
 
@@ -18,14 +19,14 @@
             <h2>THE<br>SIDE<br>DEX</h2>
         </div>
         <nav class="sidebar-nav">
-            <button class="nav-btn active" data-target="page-battle">⚔ BATALHA</button>
-            <button class="nav-btn" data-target="page-pokedex"> POKÉDEX</button>
-            <button class="nav-btn" data-target="page-options">OPÇÕES</button>
-            <button class="nav-btn" data-target="page-about">? SOBRE</button>
+            <button class="nav-btn active" data-target="page-battle">⚔ Batalha</button>
+            <button class="nav-btn" data-target="page-pokedex"> Pokédex</button>
+            <button class="nav-btn" data-target="page-options">Opções</button>
+            <button class="nav-btn" data-target="page-about">? Sobre</button>
         </nav>
         <div class="sidebar-footer">
-            <button class="nav-btn">DESFAZER</button>
-            <button class="nav-btn">SALVAR</button>
+            <button class="nav-btn">Desfazer</button>
+            <button class="nav-btn">Salvar</button>
         </div>
     </aside>
 
@@ -80,10 +81,10 @@
             <div class="versus-row">
                 <div class="dialogue-box" id="dialogue-text">Insira os nomes<br>e lute!</div>
                 <div class="battle-menu">
-                    <button class="menu-btn fight" id="btn-fight">⚔ LUTAR!</button>
-                    <button class="menu-btn" id="btn-bag">MOCHILA</button>
-                    <button class="menu-btn" id="btn-mon">POKÉMON</button>
-                    <button class="menu-btn" id="btn-run">FUGIR</button>
+                    <button class="menu-btn fight" id="btn-fight">⚔ Lutar!</button>
+                    <button class="menu-btn" id="btn-bag">Mochila</button>
+                    <button class="menu-btn" id="btn-mon">Pokémon</button>
+                    <button class="menu-btn" id="btn-run">Fugir</button>
                 </div>
             </div>
 
@@ -102,7 +103,7 @@
                                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
                             </div>
                             <div class="hp-bar-wrap">
-                                <div class="hp-label">STATS:</div>
+                                <div class="hp-label">STATS</div>
                                 <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
                             </div>
                             <input type="text" class="card-input" placeholder="NOME/ID">
@@ -117,7 +118,7 @@
                                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
                             </div>
                             <div class="hp-bar-wrap">
-                                <div class="hp-label">STATS:</div>
+                                <div class="hp-label">STATS</div>
                                 <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
                             </div>
                             <input type="text" class="card-input" placeholder="NOME/ID">
@@ -129,15 +130,142 @@
 
         </section>
 
+        <!-- Página Pokedex -->
         <section id="page-pokedex" class="page-section">
-            <h1>FILTROS DA POKÉDEX</h1>
-            <p>Conteúdo da Pokedex aqui...</p>
+            <header class="top-bar">
+                <h1>POKÉDEX BATTLE SIMULATOR - DADOS DOS LUTADORES</h1>
+            </header>
+
+            <div class="pokedex-grid">
+                <!-- Card 1 -->
+                <article class="pokedex-card red-top">
+                    <div class="pokedex-card-stripe"></div>
+                    <div class="pokedex-card-title">#000 ???</div>
+                    <div class="pokedex-card-body">
+                        <div class="pokedex-sprite-wrapper">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="pokedex-sprite" alt="Pokémon">
+                        </div>
+                        <div class="pokedex-info">
+                            <div class="pokedex-stat">ALTURA: --m</div>
+                            <div class="pokedex-stat">PESO: --kg</div>
+                            <div class="pokedex-stat">HABILIDADE:<br>--</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="pokedex-card red-top">
+                    <div class="pokedex-card-stripe"></div>
+                    <div class="pokedex-card-title">#000 ???</div>
+                    <div class="pokedex-card-body">
+                        <div class="pokedex-sprite-wrapper">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="pokedex-sprite" alt="Pokémon">
+                        </div>
+                        <div class="pokedex-info">
+                            <div class="pokedex-stat">ALTURA: --m</div>
+                            <div class="pokedex-stat">PESO: --kg</div>
+                            <div class="pokedex-stat">HABILIDADE:<br>--</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="pokedex-card blue-top">
+                    <div class="pokedex-card-stripe"></div>
+                    <div class="pokedex-card-title">#000 ???</div>
+                    <div class="pokedex-card-body">
+                        <div class="pokedex-sprite-wrapper">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="pokedex-sprite" alt="Pokémon">
+                        </div>
+                        <div class="pokedex-info">
+                            <div class="pokedex-stat">ALTURA: --m</div>
+                            <div class="pokedex-stat">PESO: --kg</div>
+                            <div class="pokedex-stat">HABILIDADE:<br>--</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="pokedex-card blue-top">
+                    <div class="pokedex-card-stripe"></div>
+                    <div class="pokedex-card-title">#000 ???</div>
+                    <div class="pokedex-card-body">
+                        <div class="pokedex-sprite-wrapper">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="pokedex-sprite" alt="Pokémon">
+                        </div>
+                        <div class="pokedex-info">
+                            <div class="pokedex-stat">ALTURA: --m</div>
+                            <div class="pokedex-stat">PESO: --kg</div>
+                            <div class="pokedex-stat">HABILIDADE:<br>--</div>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <section id="page-options" class="page-section">
-            <h1>CONFIGURAÇÕES</h1>
-            <p>Opções do jogo...</p>
-        </section>
+
+            <header class="top-bar">
+                <h1>Pokédek Battle Simulator - Configurações</h1>
+            </header>
+
+            <!-- Painel ÁUDIO -->
+            <div class="opt-panel">
+                <h3 class="opt-panel-title">Audio</h3>
+
+                <div class="opt-row">
+                    <span class="opt-label">Musica</span>
+                    <div class="opt-btns">
+                        <button class="opt-btn active" data-group="bgm" data-value="on">Ligado</button>
+                        <button class="opt-btn"        data-group="bgm" data-value="off">Desligado</button>
+                    </div>
+                </div>
+
+                <div class="opt-row">
+                    <span class="opt-label">Efeitos Sonoros</span>
+                    <div class="opt-btns">
+                        <button class="opt-btn active" data-group="sfx" data-value="on">Ligado</button>
+                        <button class="opt-btn"        data-group="sfx" data-value="off">Desligado</button>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Painel INTERFACE -->
+            <div class="opt-panel">
+                <h3 class="opt-panel-title">Interface</h3>
+
+                <div class="opt-row">
+                    <span class="opt-label">Tela Cheia</span>
+                    <div class="opt-btns">
+                        <button class="opt-btn active" data-group="fullscreen" data-value="on">Sim</button>
+                        <button class="opt-btn"        data-group="fullscreen" data-value="off">Não</button>
+                    </div>
+                </div>
+
+                <div class="opt-row">
+                    <span class="opt-label">Animações De Texto</span>
+                    <div class="opt-btns">
+                        <button class="opt-btn active" data-group="textanim" data-value="on">Ligado</button>
+                        <button class="opt-btn"        data-group="textanim" data-value="off">Desligado</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caixa de descrição -->
+            <div class="opt-dialogue" id="opt-dialogue">
+                Selecione uma opção para ver a descrição.<br>
+                Use os controles para ajustar as preferências do simulador.
+                <span class="opt-arrow">▼</span>
+            </div>
+
+            <!-- Botões de ação -->
+            <div class="opt-actions">
+                <button class="opt-action-btn" id="btn-opt-save">Salvar</button>
+                <button class="opt-action-btn" id="btn-opt-default">Padrão</button>
+                <button class="opt-action-btn" id="btn-opt-back">Voltar</button>
+            </div>
+
+</section>
 
     <!--DESSA LINHA PRA BAIXO É A PAGINA "SOBRE"-->
 <section id="page-about" class="page-section" aria-labelledby="about-heading">
@@ -428,5 +556,6 @@
 </div>
 
 <script src="js/script.js"></script>
+<script src="js/opcoes.js"></script>
 </body>
 </html>
