@@ -6,6 +6,7 @@
     <title>Gerador de Batalha Pokémon</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/opcoes.css">
 </head>
 <body>
@@ -266,11 +267,291 @@
 
 </section>
 
-        <section id="page-about" class="page-section">
-            <h1>? SOBRE O PROJETO</h1>
-            <p>Simulador de batalha PokeAPI.</p>
+    <!--DESSA LINHA PRA BAIXO É A PAGINA "SOBRE"-->
+<section id="page-about" class="page-section" aria-labelledby="about-heading">
+    
+    <header class="top-bar" style="background: var(--poke-red);">
+        <h1 id="about-heading">? SOBRE O PROJETO</h1>
+    </header>
+
+    <!-- hero -->
+    <div class="ab-hero" aria-label="Apresentação do projeto">
+        <div class="ab-hero-glow" aria-hidden="true"></div>
+        <span class="ab-hero-corner tl" aria-hidden="true">◤</span>
+        <span class="ab-hero-corner tr" aria-hidden="true">◥</span>
+        <span class="ab-hero-corner bl" aria-hidden="true">◣</span>
+        <span class="ab-hero-corner br" aria-hidden="true">◢</span>
+        <div class="ab-hero-inner">
+            <p class="ab-hero-eyebrow" aria-label="Pokédex Entry número 000">★ &nbsp; POKÉDEX ENTRY #000 &nbsp; ★</p>
+            <h2 class="ab-hero-title">THE SIDE DEX<br>BATTLE</h2>
+            <div class="ab-hero-divider" aria-hidden="true"></div>
+            <p class="ab-hero-sub">SIMULADOR DE BATALHAS 2V2</p>
+           <button class="ab-hero-press" type="button" id="press-start">— PRESS START TO PLAY — </button>
+        </div>
+    </div>
+
+    <!-- ficha do projeto -->
+   <article class="ab-card" aria-labelledby="about-heading">
+
+        <div class="ab-card-left">
+            <p class="ab-dex-num" aria-label="Número da Pokédex">#000</p>
+            <div class="ab-sprite" role="img" aria-label="Sprite do projeto">⚔️</div>
+            <p class="ab-name">THE SIDE<br>DEX BATTLE</p>
+            <div class="ab-types" aria-label="Tipos do projeto">
+                <span class="ab-type digital">Digital</span>
+                <span class="ab-type retro">Retro</span>
+                <span class="ab-type battle">Battle</span>
+            </div>
+        </div>
+
+        <div class="ab-card-right" role="region" aria-label="Estatísticas do projeto">
+            <div role="list" aria-label="Stats base">
+
+                <div class="ab-stat-row" role="listitem">
+                    <span class="ab-stat-label">HP — DIVERSÃO</span>
+                    <div class="ab-stat-bar-wrap" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                        <div class="ab-stat-bar hp"></div>
+                    </div>
+                    <span class="ab-stat-val">220</span>
+                </div>
+
+                <div class="ab-stat-row" role="listitem">
+                    <span class="ab-stat-label">ATK — BATALHA</span>
+                    <div class="ab-stat-bar-wrap" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                        <div class="ab-stat-bar atk"></div>
+                    </div>
+                    <span class="ab-stat-val">238</span>
+                </div>
+
+                <div class="ab-stat-row" role="listitem">
+                    <span class="ab-stat-label">DEF — BUGS</span>
+                    <div class="ab-stat-bar-wrap" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+                        <div class="ab-stat-bar def"></div>
+                    </div>
+                    <span class="ab-stat-val">180</span>
+                </div>
+
+                <div class="ab-stat-row" role="listitem">
+                    <span class="ab-stat-label">SP.ATK — UI</span>
+                    <div class="ab-stat-bar-wrap" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                        <div class="ab-stat-bar spatk"></div>
+                    </div>
+                    <span class="ab-stat-val">213</span>
+                </div>
+
+                <div class="ab-stat-row" role="listitem">
+                    <span class="ab-stat-label">SPD — SPA</span>
+                    <div class="ab-stat-bar-wrap" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                        <div class="ab-stat-bar spd"></div>
+                    </div>
+                    <span class="ab-stat-val">225</span>
+                </div>
+
+                <div class="ab-stat-row" role="listitem">
+                    <span class="ab-stat-label">UX — ESTILO</span>
+                    <div class="ab-stat-bar-wrap" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+                        <div class="ab-stat-bar ux"></div>
+                    </div>
+                    <span class="ab-stat-val">245</span>
+                </div>
+
+            </div>
+
+            <p class="ab-flavor">
+                "Criatura rara. Habita o espaço entre linhas de código e pixels perdidos.
+                Emite sons de cliques e batalhas 2v2. Considerada indomável por professores Pokémon."
+            </p>
+        </div>
+
+    </article>
+
+    <!-- funcionalidades e tecnologias -->
+    <div class="ab-grid-2">
+
+        <section class="ab-panel" aria-labelledby="ab-moves-title">
+            <div class="ab-panel-head">
+                <span aria-hidden="true">📋</span>
+                <span id="ab-moves-title">MOVIMENTOS APRENDIDOS</span>
+            </div>
+            <div class="ab-panel-body">
+                <div class="ab-moves" role="list">
+
+                    <div class="ab-move" role="listitem">
+                        <span class="ab-move-icon" aria-hidden="true">⚔️</span>
+                        <div class="ab-move-info">
+                            <span class="ab-move-name">BATALHA 2V2</span>
+                            <span class="ab-move-desc">Combate por turnos com 2 Pokémon de cada lado</span>
+                        </div>
+                    </div>
+
+                    <div class="ab-move" role="listitem">
+                        <span class="ab-move-icon" aria-hidden="true">📖</span>
+                        <div class="ab-move-info">
+                            <span class="ab-move-name">POKÉDEX</span>
+                            <span class="ab-move-desc">Consulta fichas completas via PokéAPI</span>
+                        </div>
+                    </div>
+
+                    <div class="ab-move" role="listitem">
+                        <span class="ab-move-icon" aria-hidden="true">🎯</span>
+                        <div class="ab-move-info">
+                            <span class="ab-move-name">SELEÇÃO DE TIME</span>
+                            <span class="ab-move-desc">Monte seu squad antes da batalha</span>
+                        </div>
+                    </div>
+
+                    <div class="ab-move" role="listitem">
+                        <span class="ab-move-icon" aria-hidden="true">⚡</span>
+                        <div class="ab-move-info">
+                            <span class="ab-move-name">SPA ROUTING</span>
+                            <span class="ab-move-desc">Zero reload — navegação instantânea</span>
+                        </div>
+                    </div>
+
+                    <div class="ab-move" role="listitem">
+                        <span class="ab-move-icon" aria-hidden="true">🎮</span>
+                        <div class="ab-move-info">
+                            <span class="ab-move-name">INTERFACE RETRO</span>
+                            <span class="ab-move-desc">Visual GameBoy com pixel art e paleta clássica</span>
+                        </div>
+                    </div>
+
+                    <div class="ab-move" role="listitem">
+                        <span class="ab-move-icon" aria-hidden="true">📱</span>
+                        <div class="ab-move-info">
+                            <span class="ab-move-name">RESPONSIVO</span>
+                            <span class="ab-move-desc">Adapta como Ditto — funciona em qualquer tela</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
+        <section class="ab-panel" aria-labelledby="ab-tech-title">
+            <div class="ab-panel-head">
+                <span aria-hidden="true">🧪</span>
+                <span id="ab-tech-title">DNA DO PROJETO — TECNOLOGIAS</span>
+            </div>
+            <div class="ab-panel-body">
+
+                <div class="ab-tech-grid" role="list" aria-label="Tecnologias utilizadas">
+                    <div class="ab-tech" role="listitem"><span class="ab-dot yellow" aria-hidden="true"></span>HTML 5</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot blue"   aria-hidden="true"></span>CSS 3</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot green"  aria-hidden="true"></span>JavaScript ES6+</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot red"    aria-hidden="true"></span>PokéAPI REST</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot yellow" aria-hidden="true"></span>Fetch Async</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot blue"   aria-hidden="true"></span>SPA Pattern</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot green"  aria-hidden="true"></span>Sem Frameworks</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot green"  aria-hidden="true"></span>Sem Dependências</div>
+                </div>
+
+                <div class="ab-tech-note" role="note">
+                    Construído com HTML, CSS e JS puros —<br>
+                    zero frameworks, zero dependências externas.<br>
+                    <span>Velocidade de um Jolteon.</span>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- equipe -->
+    <section class="ab-panel" aria-labelledby="ab-team-title">
+        <div class="ab-panel-head">
+            <span aria-hidden="true">👥</span>
+            <span id="ab-team-title">TREINADORES — EQUIPE DE CAMPO</span>
+        </div>
+        <div class="ab-panel-body">
+            <div class="ab-trainers" role="list">
+
+                <article class="ab-trainer" role="listitem" aria-label="Jorge Assunção Neto">
+                    <div class="ab-trainer-avatar" aria-hidden="true">🏗️</div>
+                    <p class="ab-trainer-name">Jorge<br>Assunção Neto</p>
+                    <p class="ab-trainer-area">Arquitetura &amp; Deploy</p>
+                    <p class="ab-trainer-task">Página principal (index.html),<br>testes &amp; deploy do projeto</p>
+                    <span class="ab-trainer-badge dark">LEAD DEV</span>
+                </article>
+
+                <article class="ab-trainer" role="listitem" aria-label="Ana Beatriz Carvalho">
+                    <div class="ab-trainer-avatar" aria-hidden="true">⚔️</div>
+                    <p class="ab-trainer-name">Ana Beatriz<br>Carvalho</p>
+                    <p class="ab-trainer-area">PokéAPI &amp; Batalha</p>
+                    <p class="ab-trainer-task">Integração PokéAPI &amp;<br>lógica de batalha</p>
+                    <span class="ab-trainer-badge red">BATTLE DEV</span>
+                </article>
+
+                <article class="ab-trainer" role="listitem" aria-label="André Luiz Gonçalves">
+                    <div class="ab-trainer-avatar" aria-hidden="true">🧩</div>
+                    <p class="ab-trainer-name">André Luiz<br>Gonçalves</p>
+                    <p class="ab-trainer-area">PokéAPI &amp; Batalha</p>
+                    <p class="ab-trainer-task">Integração PokéAPI &amp;<br>lógica de batalha</p>
+                    <span class="ab-trainer-badge red">BATTLE DEV</span>
+                </article>
+
+                <article class="ab-trainer" role="listitem" aria-label="Victoria Ingrid Oliveira">
+                    <div class="ab-trainer-avatar" aria-hidden="true">📖</div>
+                    <p class="ab-trainer-name">Victoria Ingrid<br>Oliveira</p>
+                    <p class="ab-trainer-area">Página SOBRE</p>
+                    <p class="ab-trainer-task">Desenvolvimento e design<br>da página Sobre</p>
+                    <span class="ab-trainer-badge">UI DEV</span>
+                </article>
+
+                <article class="ab-trainer" role="listitem" aria-label="Agda Barbosa de Oliveira">
+                    <div class="ab-trainer-avatar" aria-hidden="true">📘</div>
+                    <p class="ab-trainer-name">Agda Barbosa<br>de Oliveira</p>
+                    <p class="ab-trainer-area">Página POKÉDEX</p>
+                    <p class="ab-trainer-task">Desenvolvimento completo<br>da página Pokédex</p>
+                    <span class="ab-trainer-badge">DEX DEV</span>
+                </article>
+
+                <article class="ab-trainer" role="listitem" aria-label="Luciano Oliveira Silva Júnior">
+                    <div class="ab-trainer-avatar" aria-hidden="true">⚙️</div>
+                    <p class="ab-trainer-name">Luciano Oliveira<br>Silva Júnior</p>
+                    <p class="ab-trainer-area">Página OPÇÕES</p>
+                    <p class="ab-trainer-task">Desenvolvimento completo<br>da página de Opções</p>
+                    <span class="ab-trainer-badge">OPTIONS DEV</span>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- créditos -->
+    <section class="ab-panel" aria-labelledby="ab-credits-title">
+        <div class="ab-panel-head">
+            <span aria-hidden="true">⭐</span>
+            <span id="ab-credits-title">CRÉDITOS &amp; RECONHECIMENTOS</span>
+        </div>
+        <div class="ab-panel-body" role="list">
+
+            <div class="ab-credits-row" role="listitem">
+                <span class="ab-credits-icon" aria-hidden="true">🏆</span>
+                <p class="ab-credits-text"><strong>Nintendo / Game Freak / Creatures</strong> — Criadores do universo Pokémon. Todo lore, nomes e mecânicas pertencem a eles. Tributo não-comercial feito com amor.</p>
+            </div>
+
+            <div class="ab-credits-row" role="listitem">
+                <span class="ab-credits-icon" aria-hidden="true">🌐</span>
+                <p class="ab-credits-text"><strong>PokéAPI (pokeapi.co)</strong> — A Pokédex definitiva em REST. Sem ela, nossa Pokédex seria um caderno vazio. Open source e mantida pela comunidade.</p>
+            </div>
+
+            <div class="ab-credits-row" role="listitem">
+                <span class="ab-credits-icon" aria-hidden="true">📚</span>
+                <p class="ab-credits-text"><strong>MDN Web Docs &amp; web.dev</strong> — A verdadeira Pokédex do dev web. Consultada às 3h da manhã mais vezes do que gostaríamos de admitir.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="ab-footer" role="contentinfo">
+        THE SIDE DEX BATTLE — v1.0 &nbsp;|&nbsp;
+        POKÉMON © NINTENDO / GAME FREAK &nbsp;|&nbsp;
+        NENHUM POKÉMON FOI FERIDO NO DESENVOLVIMENTO DESTE SITE
+    </footer>
+
+</section>
+<!--AQUI NESSA LINHA TERMINA A PAGINA "SOBRE"-->
     </main>
 </div>
 
