@@ -45,6 +45,7 @@ document.querySelectorAll('#page-options .opt-btn').forEach(btn => {
 });
 
 // Fullscreen sync
+// Sincroniza botão quando usuário aperta ESC para sair do fullscreen
 document.addEventListener('fullscreenchange', () => {
     const estaCheia = !!document.fullscreenElement;
     document.querySelectorAll('#page-options .opt-btn[data-group="fullscreen"]').forEach(b => {

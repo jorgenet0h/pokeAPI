@@ -43,3 +43,6 @@ document.getElementById('btn-random-blue').addEventListener('click', () => {
 document.getElementById('btn-fight').addEventListener('click', () => {
     typeText("Conectando à\nPokeAPI...");
 });
+document.getElementById('press-start')?.addEventListener('click', () => {
+    document.querySelector('.nav-btn[data-target="page-battle"]')?.click();
+});
