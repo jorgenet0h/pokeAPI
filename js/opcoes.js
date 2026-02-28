@@ -11,12 +11,21 @@ document.querySelectorAll('#page-options .opt-btn').forEach(btn => {
 
         document.querySelectorAll(`#page-options .opt-btn[data-group="${group}"]`)
             .forEach(b => b.classList.remove('active'));
-
         btn.classList.add('active');
 
         const box = document.getElementById('opt-dialogue');
-        if (box) {
-            box.innerHTML = optDescriptions[group] + '<span class="opt-arrow">▼</span>';
+        if (box) box.innerHTML = optDescriptions[group] + '<span class="opt-arrow">▼</span>';
+
+        // ── BGM ──────────────────────────────────────
+        if (group === 'bgm' && typeof PokeBGM !== 'undefined') {
+            PokeBGM.toggle(btn.dataset.value === 'on');
+            const bars = document.getElementById('music-bars');
+            if (bars) bars.classList.toggle('paused', btn.dataset.value !== 'on');
+        }
+
+        // ── SFX ──────────────────────────────────────
+        if (group === 'sfx' && typeof PokeSFX !== 'undefined') {
+            PokeSFX.toggle(btn.dataset.value === 'on');
         }
 
         // ── TELA CHEIA ──────────────────────────────
@@ -35,6 +44,7 @@ document.querySelectorAll('#page-options .opt-btn').forEach(btn => {
     });
 });
 
+// Fullscreen sync
 // Sincroniza botão quando usuário aperta ESC para sair do fullscreen
 document.addEventListener('fullscreenchange', () => {
     const estaCheia = !!document.fullscreenElement;
@@ -44,13 +54,48 @@ document.addEventListener('fullscreenchange', () => {
     });
 });
 
-// SALVAR
+/* ── Slider BGM Volume ──────────────────────────────────────── */
+function setSlider(rangeId, fillId, thumbId, pctId, val, callback) {
+    const range = document.getElementById(rangeId);
+    const fill  = document.getElementById(fillId);
+    const thumb = document.getElementById(thumbId);
+    const pct   = document.getElementById(pctId);
+    if (!range) return;
+
+    const update = (v) => {
+        v = Math.round(v);
+        if (fill)  fill.style.width     = v + '%';
+        if (thumb) thumb.style.left     = v + '%';
+        if (pct)   pct.textContent      = v + '%';
+        callback?.(v);
+    };
+
+    range.addEventListener('input', () => update(range.value));
+    update(val); // inicial
+}
+
+setSlider('vol-slider', 'vol-fill', 'vol-thumb', 'vol-value', 50, (v) => {
+    if (typeof PokeBGM !== 'undefined') PokeBGM.setVolume(v / 100);
+});
+
+/* ── Botões prev / next ─────────────────────────────────────── */
+document.getElementById('btn-prev')?.addEventListener('click', () => {
+    if (typeof PokeBGM !== 'undefined') PokeBGM.prev();
+    if (typeof PokeSFX !== 'undefined') PokeSFX.play('select');
+});
+
+document.getElementById('btn-next')?.addEventListener('click', () => {
+    if (typeof PokeBGM !== 'undefined') PokeBGM.next();
+    if (typeof PokeSFX !== 'undefined') PokeSFX.play('select');
+});
+
+/* ── SALVAR ─────────────────────────────────────────────────── */
 document.getElementById('btn-opt-save')?.addEventListener('click', () => {
     const box = document.getElementById('opt-dialogue');
     if (box) box.innerHTML = 'Configurações salvas!<span class="opt-arrow">▼</span>';
 });
 
-// PADRÃO
+/* ── PADRÃO ─────────────────────────────────────────────────── */
 document.getElementById('btn-opt-default')?.addEventListener('click', () => {
     document.querySelectorAll('#page-options .opt-btns').forEach(group => {
         const btns = group.querySelectorAll('.opt-btn');
@@ -58,11 +103,15 @@ document.getElementById('btn-opt-default')?.addEventListener('click', () => {
         if (btns[0]) btns[0].classList.add('active');
     });
     if (document.fullscreenElement) document.exitFullscreen();
+
+    // Reseta sliders
+    const volR = document.getElementById('vol-slider');
+    if (volR) { volR.value = 50; volR.dispatchEvent(new Event('input')); }
     const box = document.getElementById('opt-dialogue');
     if (box) box.innerHTML = 'Configurações restauradas para o padrão.<span class="opt-arrow">▼</span>';
 });
 
-// VOLTAR
+//── VOLTAR ───────────────────────────────────────────────────
 document.getElementById('btn-opt-back')?.addEventListener('click', () => {
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.page-section').forEach(p => p.classList.remove('active'));

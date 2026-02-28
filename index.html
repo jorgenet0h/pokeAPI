@@ -213,7 +213,17 @@
             <div class="opt-panel">
                 <h3 class="opt-panel-title">Audio</h3>
 
-                <div class="opt-row">
+                <!-- Toggle SFX -->
+                <div class="opt-row" style="margin-bottom:12px">
+                    <span class="opt-label">Efeitos Sonoros</span>
+                    <div class="opt-btns">
+                        <button class="opt-btn active" data-group="sfx" data-value="on">Ligado</button>
+                        <button class="opt-btn"        data-group="sfx" data-value="off">Desligado</button>
+                    </div>
+                </div>
+
+                <!-- Toggle BGM -->
+                <div class="opt-row" style="margin-bottom:12px">
                     <span class="opt-label">Musica</span>
                     <div class="opt-btns">
                         <button class="opt-btn active" data-group="bgm" data-value="on">Ligado</button>
@@ -221,13 +231,35 @@
                     </div>
                 </div>
 
-                <div class="opt-row">
-                    <span class="opt-label">Efeitos Sonoros</span>
-                    <div class="opt-btns">
-                        <button class="opt-btn active" data-group="sfx" data-value="on">Ligado</button>
-                        <button class="opt-btn"        data-group="sfx" data-value="off">Desligado</button>
+                <!-- Slider BGM -->
+                <div class="audio-row">
+                    <span class="audio-icon">🔊</span>
+                    <div class="audio-track">
+                        <div class="audio-fill" id="vol-fill"></div>
+                        <div class="audio-thumb" id="vol-thumb" style="left:50%"></div>
+                        <input type="range" class="audio-range" id="vol-slider" min="0" max="100" value="50">
+                    </div>
+                    <span class="audio-pct" id="vol-value">50%</span>
+                </div>
+
+                <!-- Caixa de música atual -->
+                <div class="music-box">
+                    <div class="music-box-left">
+                        <span class="music-note-icon">♪</span>
+                        <div class="music-info">
+                            <div class="music-title" id="music-title">Title Screen</div>
+                            <div class="music-bars" id="music-bars">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="music-controls">
+                        <button class="music-btn" id="btn-prev">◀</button>
+                        <button class="music-btn" id="btn-next">▶</button>
                     </div>
                 </div>
+
+
             </div>
 
     <!-- Painel INTERFACE -->
@@ -555,6 +587,8 @@
     </main>
 </div>
 
+<script src="js/music.js"></script>
+<script src="js/sfx.js"></script>
 <script src="js/script.js"></script>
 <script src="js/opcoes.js"></script>
 </body>
