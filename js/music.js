@@ -1,4 +1,3 @@
-//POKE OST PLAYLIST
 const PokeBGM = (() => {
 
     const PLAYLIST = [

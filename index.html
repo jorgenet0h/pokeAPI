@@ -25,10 +25,7 @@
             <button class="nav-btn" data-target="page-options">Opções</button>
             <button class="nav-btn" data-target="page-about">? Sobre</button>
         </nav>
-        <div class="sidebar-footer">
-            <button class="nav-btn">Desfazer</button>
-            <button class="nav-btn">Salvar</button>
-        </div>
+
     </aside>
 
     <main class="main-content">
@@ -49,30 +46,42 @@
                 <div class="cards-row">
                     <article class="poke-card-slot" id="card-red-1">
                         <div class="card-inner">
-                            <div class="card-top"><span class="poke-id">???</span></div>
+                            <div class="card-top"><span class="poke-id">???</span><button class="btn-lock" data-card="card-red-1" title="Travar card">🔓</button></div>
                             <div class="sprite-wrapper">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
+                                <img src="assets/pokeball.png" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'" class="sprite-preview" alt="Vazio">
                             </div>
-                            <div class="hp-bar-wrap">
-                                <div class="hp-label">STATS:</div>
-                                <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
+                            <div class="stat-bars" id="card-red-1-stats">
+                                <div class="stat-row"><span class="stat-label">HP</span><div class="stat-track"><div class="stat-fill hp" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill atk" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill def" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPA</span><div class="stat-track"><div class="stat-fill spa" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill spd" style="width:0%"></div></div><span class="stat-val">--</span></div>
                             </div>
-                            <input type="text" class="card-input" placeholder="NOME/ID">
+                            <div class="search-wrap">
+                                <input type="text" class="card-input" placeholder="NOME / ID">
+                                <button class="btn-search" title="Buscar">🔍</button>
+                            </div>
                             <div class="type-badges"></div>
                         </div>
                     </article>
 
                     <article class="poke-card-slot" id="card-red-2">
                         <div class="card-inner">
-                            <div class="card-top"><span class="poke-id">???</span></div>
+                            <div class="card-top"><span class="poke-id">???</span><button class="btn-lock" data-card="card-red-2" title="Travar card">🔓</button></div>
                             <div class="sprite-wrapper">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
+                                <img src="assets/pokeball.png" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'" class="sprite-preview" alt="Vazio">
                             </div>
-                            <div class="hp-bar-wrap">
-                                <div class="hp-label">STATS:</div>
-                                <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
+                            <div class="stat-bars" id="card-red-2-stats">
+                                <div class="stat-row"><span class="stat-label">HP</span><div class="stat-track"><div class="stat-fill hp" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill atk" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill def" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPA</span><div class="stat-track"><div class="stat-fill spa" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill spd" style="width:0%"></div></div><span class="stat-val">--</span></div>
                             </div>
-                            <input type="text" class="card-input" placeholder="NOME/ID">
+                            <div class="search-wrap">
+                                <input type="text" class="card-input" placeholder="NOME / ID">
+                                <button class="btn-search" title="Buscar">🔍</button>
+                            </div>
                             <div class="type-badges"></div>
                         </div>
                     </article>
@@ -89,6 +98,44 @@
                 </div>
             </div>
 
+            <div class="battle-result" id="battle-result" style="display:none">
+                <div class="result-stripe"></div>
+                <div class="result-title-wrap" id="result-title-wrap">
+                    <div class="result-glow" id="result-glow"></div>
+                    <span class="result-corner tl">◤</span>
+                    <span class="result-corner tr">◥</span>
+                    <span class="result-corner bl">◣</span>
+                    <span class="result-corner br">◢</span>
+                    <div class="result-inner">
+                        <div class="result-eyebrow" id="result-eyebrow">★ BATALHA ENCERRADA ★</div>
+                        <div class="result-title" id="result-title"></div>
+                        <div class="result-divider"></div>
+                    </div>
+                </div>
+                <div class="result-scores">
+                    <div class="result-team red">
+                        <div class="result-team-label">TIME VERMELHO</div>
+                        <div class="result-team-score" id="score-red"></div>
+                        <div class="result-team-detail" id="detail-red"></div>
+                    </div>
+                    <div class="result-vs">VS</div>
+                    <div class="result-team blue">
+                        <div class="result-team-label">TIME AZUL</div>
+                        <div class="result-team-score" id="score-blue"></div>
+                        <div class="result-team-detail" id="detail-blue"></div>
+                    </div>
+                </div>
+
+                <div class="result-swap" id="result-swap" style="display:none">
+                    <div class="result-swap-title" id="result-swap-title"></div>
+                    <div class="result-swap-slots" id="result-swap-slots"></div>
+                </div>
+                <div class="result-actions">
+                    <button class="result-replay" id="btn-replay">🔄 JOGAR NOVAMENTE</button>
+                    <button class="result-swap-btn" id="btn-swap-toggle">🔀 TROCAR POKÉMON DO VENCEDOR</button>
+                </div>
+            </div>
+
             <section class="team-container team-blue">
                 <div class="team-header-bar"></div>
                 <div class="team-header">
@@ -99,30 +146,42 @@
                 <div class="cards-row">
                     <article class="poke-card-slot" id="card-blue-1">
                         <div class="card-inner">
-                            <div class="card-top"><span class="poke-id">???</span></div>
+                            <div class="card-top"><span class="poke-id">???</span><button class="btn-lock" data-card="card-blue-1" title="Travar card">🔓</button></div>
                             <div class="sprite-wrapper">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
+                                <img src="assets/pokeball.png" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'" class="sprite-preview" alt="Vazio">
                             </div>
-                            <div class="hp-bar-wrap">
-                                <div class="hp-label">STATS</div>
-                                <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
+                            <div class="stat-bars" id="card-blue-1-stats">
+                                <div class="stat-row"><span class="stat-label">HP</span><div class="stat-track"><div class="stat-fill hp" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill atk" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill def" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPA</span><div class="stat-track"><div class="stat-fill spa" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill spd" style="width:0%"></div></div><span class="stat-val">--</span></div>
                             </div>
-                            <input type="text" class="card-input" placeholder="NOME/ID">
+                            <div class="search-wrap">
+                                <input type="text" class="card-input" placeholder="NOME / ID">
+                                <button class="btn-search" title="Buscar">🔍</button>
+                            </div>
                             <div class="type-badges"></div>
                         </div>
                     </article>
 
                     <article class="poke-card-slot" id="card-blue-2">
                         <div class="card-inner">
-                            <div class="card-top"><span class="poke-id">???</span></div>
+                            <div class="card-top"><span class="poke-id">???</span><button class="btn-lock" data-card="card-blue-2" title="Travar card">🔓</button></div>
                             <div class="sprite-wrapper">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
+                                <img src="assets/pokeball.png" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'" class="sprite-preview" alt="Vazio">
                             </div>
-                            <div class="hp-bar-wrap">
-                                <div class="hp-label">STATS</div>
-                                <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
+                            <div class="stat-bars" id="card-blue-2-stats">
+                                <div class="stat-row"><span class="stat-label">HP</span><div class="stat-track"><div class="stat-fill hp" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill atk" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill def" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPA</span><div class="stat-track"><div class="stat-fill spa" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill spd" style="width:0%"></div></div><span class="stat-val">--</span></div>
                             </div>
-                            <input type="text" class="card-input" placeholder="NOME/ID">
+                            <div class="search-wrap">
+                                <input type="text" class="card-input" placeholder="NOME / ID">
+                                <button class="btn-search" title="Buscar">🔍</button>
+                            </div>
                             <div class="type-badges"></div>
                         </div>
                     </article>
@@ -131,77 +190,37 @@
 
         </section>
 
-        <!-- Página Pokedex -->
         <section id="page-pokedex" class="page-section">
             <header class="top-bar">
-                <h1>POKÉDEX BATTLE SIMULATOR - DADOS DOS LUTADORES</h1>
+                <h1>POKÉDEX — DADOS DOS LUTADORES</h1>
             </header>
 
-            <div class="pokedex-grid">
-                <!-- Card 1 -->
-                <article class="pokedex-card red-top">
-                    <div class="pokedex-card-stripe"></div>
-                    <div class="pokedex-card-title">#000 ???</div>
-                    <div class="pokedex-card-body">
-                        <div class="pokedex-sprite-wrapper">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="pokedex-sprite" alt="Pokémon">
-                        </div>
-                        <div class="pokedex-info">
-                            <div class="pokedex-stat">ALTURA: --m</div>
-                            <div class="pokedex-stat">PESO: --kg</div>
-                            <div class="pokedex-stat">HABILIDADE:<br>--</div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 2 -->
-                <article class="pokedex-card red-top">
-                    <div class="pokedex-card-stripe"></div>
-                    <div class="pokedex-card-title">#000 ???</div>
-                    <div class="pokedex-card-body">
-                        <div class="pokedex-sprite-wrapper">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="pokedex-sprite" alt="Pokémon">
-                        </div>
-                        <div class="pokedex-info">
-                            <div class="pokedex-stat">ALTURA: --m</div>
-                            <div class="pokedex-stat">PESO: --kg</div>
-                            <div class="pokedex-stat">HABILIDADE:<br>--</div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 3 -->
-                <article class="pokedex-card blue-top">
-                    <div class="pokedex-card-stripe"></div>
-                    <div class="pokedex-card-title">#000 ???</div>
-                    <div class="pokedex-card-body">
-                        <div class="pokedex-sprite-wrapper">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="pokedex-sprite" alt="Pokémon">
-                        </div>
-                        <div class="pokedex-info">
-                            <div class="pokedex-stat">ALTURA: --m</div>
-                            <div class="pokedex-stat">PESO: --kg</div>
-                            <div class="pokedex-stat">HABILIDADE:<br>--</div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 4 -->
-                <article class="pokedex-card blue-top">
-                    <div class="pokedex-card-stripe"></div>
-                    <div class="pokedex-card-title">#000 ???</div>
-                    <div class="pokedex-card-body">
-                        <div class="pokedex-sprite-wrapper">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="pokedex-sprite" alt="Pokémon">
-                        </div>
-                        <div class="pokedex-info">
-                            <div class="pokedex-stat">ALTURA: --m</div>
-                            <div class="pokedex-stat">PESO: --kg</div>
-                            <div class="pokedex-stat">HABILIDADE:<br>--</div>
-                        </div>
-                    </div>
-                </article>
+            <div class="pdex-type-bar">
+                <button class="pdex-type-btn active" data-type="all">TODOS</button>
+                <button class="pdex-type-btn" data-type="fire"><span class="type fire">FOGO</span></button>
+                <button class="pdex-type-btn" data-type="water"><span class="type water">ÁGUA</span></button>
+                <button class="pdex-type-btn" data-type="grass"><span class="type grass">PLANTA</span></button>
+                <button class="pdex-type-btn" data-type="electric"><span class="type electric">ELÉTRICO</span></button>
+                <button class="pdex-type-btn" data-type="psychic"><span class="type psychic">PSÍQUICO</span></button>
+                <button class="pdex-type-btn" data-type="ice"><span class="type ice">GELO</span></button>
+                <button class="pdex-type-btn" data-type="dragon"><span class="type dragon">DRAGÃO</span></button>
+                <button class="pdex-type-btn" data-type="dark"><span class="type dark">SOMBRIO</span></button>
+                <button class="pdex-type-btn" data-type="fairy"><span class="type fairy">FADA</span></button>
+                <button class="pdex-type-btn" data-type="poison"><span class="type poison">VENENO</span></button>
+                <button class="pdex-type-btn" data-type="fighting"><span class="type fighting">LUTADOR</span></button>
+                <button class="pdex-type-btn" data-type="rock"><span class="type rock">PEDRA</span></button>
+                <button class="pdex-type-btn" data-type="ground"><span class="type ground">TERRA</span></button>
+                <button class="pdex-type-btn" data-type="ghost"><span class="type ghost">FANTASMA</span></button>
+                <button class="pdex-type-btn" data-type="steel"><span class="type steel">METAL</span></button>
+                <button class="pdex-type-btn" data-type="normal"><span class="type normal">NORMAL</span></button>
+                <button class="pdex-type-btn" data-type="bug"><span class="type bug">INSETO</span></button>
+                <button class="pdex-type-btn" data-type="flying"><span class="type flying">VOADOR</span></button>
             </div>
+
+            <div class="pdex-status" id="pdex-status">Carregando Pokédex...</div>
+
+            <div class="pokedex-grid pdex-grid-evo" id="pdex-grid"></div>
+
         </section>
 
         <section id="page-options" class="page-section">
@@ -210,11 +229,9 @@
                 <h1>Pokédek Battle Simulator - Configurações</h1>
             </header>
 
-            <!-- Painel ÁUDIO -->
             <div class="opt-panel">
                 <h3 class="opt-panel-title">Audio</h3>
 
-                <!-- Toggle SFX -->
                 <div class="opt-row" style="margin-bottom:12px">
                     <span class="opt-label">Efeitos Sonoros</span>
                     <div class="opt-btns">
@@ -223,7 +240,6 @@
                     </div>
                 </div>
 
-                <!-- Toggle BGM -->
                 <div class="opt-row" style="margin-bottom:12px">
                     <span class="opt-label">Musica</span>
                     <div class="opt-btns">
@@ -232,7 +248,6 @@
                     </div>
                 </div>
 
-                <!-- Slider BGM -->
                 <div class="audio-row">
                     <span class="audio-icon">🔊</span>
                     <div class="audio-track">
@@ -243,7 +258,6 @@
                     <span class="audio-pct" id="vol-value">50%</span>
                 </div>
 
-                <!-- Caixa de música atual -->
                 <div class="music-box">
                     <div class="music-box-left">
                         <span class="music-note-icon">♪</span>
@@ -263,7 +277,6 @@
 
             </div>
 
-    <!-- Painel INTERFACE -->
             <div class="opt-panel">
                 <h3 class="opt-panel-title">Interface</h3>
 
@@ -284,14 +297,12 @@
                 </div>
             </div>
 
-            <!-- Caixa de descrição -->
             <div class="opt-dialogue" id="opt-dialogue">
                 Selecione uma opção para ver a descrição.<br>
                 Use os controles para ajustar as preferências do simulador.
                 <span class="opt-arrow">▼</span>
             </div>
 
-            <!-- Botões de ação -->
             <div class="opt-actions">
                 <button class="opt-action-btn" id="btn-opt-save">Salvar</button>
                 <button class="opt-action-btn" id="btn-opt-default">Padrão</button>
@@ -300,14 +311,12 @@
 
 </section>
 
-    <!--DESSA LINHA PRA BAIXO É A PAGINA "SOBRE"-->
 <section id="page-about" class="page-section" aria-labelledby="about-heading">
     
     <header class="top-bar" style="background: var(--poke-red);">
         <h1 id="about-heading">? SOBRE O PROJETO</h1>
     </header>
 
-    <!-- hero -->
     <div class="ab-hero" aria-label="Apresentação do projeto">
         <div class="ab-hero-glow" aria-hidden="true"></div>
         <span class="ab-hero-corner tl" aria-hidden="true">◤</span>
@@ -323,7 +332,6 @@
         </div>
     </div>
 
-    <!-- ficha do projeto -->
    <article class="ab-card" aria-labelledby="about-heading">
 
         <div class="ab-card-left">
@@ -398,7 +406,6 @@
 
     </article>
 
-    <!-- funcionalidades e tecnologias -->
     <div class="ab-grid-2">
 
         <section class="ab-panel" aria-labelledby="ab-moves-title">
@@ -490,7 +497,6 @@
 
     </div>
 
-    <!-- equipe -->
     <section class="ab-panel" aria-labelledby="ab-team-title">
         <div class="ab-panel-head">
             <span aria-hidden="true">👥</span>
@@ -551,7 +557,6 @@
         </div>
     </section>
 
-    <!-- créditos -->
     <section class="ab-panel" aria-labelledby="ab-credits-title">
         <div class="ab-panel-head">
             <span aria-hidden="true">⭐</span>
@@ -584,7 +589,6 @@
     </footer>
 
 </section>
-<!--AQUI NESSA LINHA TERMINA A PAGINA "SOBRE"-->
     </main>
 </div>
 
@@ -592,5 +596,6 @@
 <script src="js/sfx.js"></script>
 <script src="js/script.js"></script>
 <script src="js/opcoes.js"></script>
+<script src="js/pokedex.js"></script>
 </body>
 </html>

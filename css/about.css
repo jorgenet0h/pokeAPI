@@ -1,8 +1,3 @@
-/* Página Sobre */
-
-
-/* Hero */
-
 .ab-hero {
     background: var(--black);
     border: var(--win);
@@ -103,9 +98,6 @@
     outline-offset: 6px;
 }
 
-
-/* Animações */
-
 @keyframes ab-expand  { to { width: 70px; } }
 @keyframes ab-blink   { 50% { opacity: 0; } }
 
@@ -123,9 +115,6 @@
     0%, 100% { transform: translateY(0); }
     50%      { transform: translateY(-5px); }
 }
-
-
-/* Card */
 
 .ab-card {
     display: grid;
@@ -245,9 +234,6 @@
     line-height: 2;
 }
 
-
-/* Painéis */
-
 .ab-panel {
     background: var(--white);
     border: var(--win);
@@ -288,9 +274,6 @@
     gap: 10px;
 }
 
-
-/* Movimentos */
-
 .ab-moves {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -322,9 +305,6 @@
 .ab-move-desc {
     font-family: var(--font); font-size: .48rem; color: var(--gray); line-height: 1.8;
 }
-
-
-/* Tecnologias */
 
 .ab-tech-grid { display: flex; flex-wrap: wrap; gap: .4rem; }
 
@@ -366,9 +346,6 @@
 }
 
 .ab-tech-note span { color: var(--hp-green); }
-
-
-/* Equipe */
 
 .ab-trainers { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; }
 
@@ -416,9 +393,6 @@
 .ab-trainer-badge.red  { background: var(--poke-red); }
 .ab-trainer-badge.dark { background: var(--black); }
 
-
-/* Créditos */
-
 .ab-credits-row {
     display: flex;
     align-items: flex-start;
@@ -434,9 +408,6 @@
 .ab-credits-text { font-family: var(--font); font-size: .55rem; color: var(--black); line-height: 2; }
 .ab-credits-text strong { color: var(--poke-red); }
 
-
-/* Rodapé */
-
 .ab-footer {
     background: var(--black);
     border: var(--win);
@@ -451,9 +422,6 @@
 }
 
 .ab-footer span { color: var(--poke-red); }
-
-
-/* Responsivo */
 
 @media (max-width: 680px) {
     .ab-card             { grid-template-columns: 1fr; }
