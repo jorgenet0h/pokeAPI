@@ -184,3 +184,76 @@ html, body {
 .poison { background: var(--poison); } .fighting { background: var(--fighting); } .rock { background: var(--rock); color:#000; text-shadow:none; }
 .ground { background: var(--ground); color:#000; text-shadow:none; } .ghost { background: var(--ghost); } .steel { background: var(--steel); color:#000; text-shadow:none; }
 .normal { background: var(--normal); color:#000; text-shadow:none; } .bug { background: var(--bug); } .flying { background: var(--flying); color:#000; text-shadow:none; }
+
+
+@media (max-width: 768px) {
+
+    html {
+        font-size: 115%;
+    }
+
+    .dialogue-box {
+        font-size: 0.65rem; 
+        line-height: 2;
+    }
+    
+    .card-input {
+        font-size: 0.55rem;
+    }
+
+    .app-layout { 
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto 1fr; 
+    }
+
+    .sidebar { 
+        flex-direction: row; 
+        border-right: none; 
+        border-bottom: var(--win); 
+        overflow-x: auto;
+    }
+
+    .sidebar-header, 
+    .sidebar-footer { 
+        display: none; 
+    }
+
+    .sidebar-nav { 
+        flex-direction: row; 
+        padding: 5px; 
+    }
+    
+    .nav-btn { 
+        width: auto; 
+        padding: 8px 12px; 
+        font-size: 0.45rem; 
+        white-space: nowrap; 
+    }
+    
+    .nav-btn::before { 
+        display: none;
+    }
+
+    .cards-row { 
+        justify-content: center; 
+    }
+
+    .team-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .versus-row { 
+        flex-direction: column; 
+        height: auto; 
+    }
+    
+    .dialogue-box { 
+        min-height: 80px; 
+    }
+    
+    .battle-menu { 
+        width: 100%;
+    }
+}

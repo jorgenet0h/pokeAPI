@@ -6,6 +6,9 @@
     <title>Gerador de Batalha Pokémon</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/opcoes.css">
+    <link rel="stylesheet" href="css/pokedex.css">
 </head>
 <body>
 
@@ -17,15 +20,12 @@
             <h2>THE<br>SIDE<br>DEX</h2>
         </div>
         <nav class="sidebar-nav">
-            <button class="nav-btn active" data-target="page-battle">⚔ BATALHA</button>
-            <button class="nav-btn" data-target="page-pokedex"> POKÉDEX</button>
-            <button class="nav-btn" data-target="page-options">OPÇÕES</button>
-            <button class="nav-btn" data-target="page-about">? SOBRE</button>
+            <button class="nav-btn active" data-target="page-battle">⚔ Batalha</button>
+            <button class="nav-btn" data-target="page-pokedex"> Pokédex</button>
+            <button class="nav-btn" data-target="page-options">Opções</button>
+            <button class="nav-btn" data-target="page-about">? Sobre</button>
         </nav>
-        <div class="sidebar-footer">
-            <button class="nav-btn">DESFAZER</button>
-            <button class="nav-btn">SALVAR</button>
-        </div>
+
     </aside>
 
     <main class="main-content">
@@ -46,30 +46,42 @@
                 <div class="cards-row">
                     <article class="poke-card-slot" id="card-red-1">
                         <div class="card-inner">
-                            <div class="card-top"><span class="poke-id">???</span></div>
+                            <div class="card-top"><span class="poke-id">???</span><button class="btn-lock" data-card="card-red-1" title="Travar card">🔓</button></div>
                             <div class="sprite-wrapper">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
+                                <img src="assets/pokeball.png" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'" class="sprite-preview" alt="Vazio">
                             </div>
-                            <div class="hp-bar-wrap">
-                                <div class="hp-label">STATS:</div>
-                                <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
+                            <div class="stat-bars" id="card-red-1-stats">
+                                <div class="stat-row"><span class="stat-label">HP</span><div class="stat-track"><div class="stat-fill hp" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill atk" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill def" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPA</span><div class="stat-track"><div class="stat-fill spa" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill spd" style="width:0%"></div></div><span class="stat-val">--</span></div>
                             </div>
-                            <input type="text" class="card-input" placeholder="NOME/ID">
+                            <div class="search-wrap">
+                                <input type="text" class="card-input" placeholder="NOME / ID">
+                                <button class="btn-search" title="Buscar">🔍</button>
+                            </div>
                             <div class="type-badges"></div>
                         </div>
                     </article>
 
                     <article class="poke-card-slot" id="card-red-2">
                         <div class="card-inner">
-                            <div class="card-top"><span class="poke-id">???</span></div>
+                            <div class="card-top"><span class="poke-id">???</span><button class="btn-lock" data-card="card-red-2" title="Travar card">🔓</button></div>
                             <div class="sprite-wrapper">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
+                                <img src="assets/pokeball.png" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'" class="sprite-preview" alt="Vazio">
                             </div>
-                            <div class="hp-bar-wrap">
-                                <div class="hp-label">STATS:</div>
-                                <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
+                            <div class="stat-bars" id="card-red-2-stats">
+                                <div class="stat-row"><span class="stat-label">HP</span><div class="stat-track"><div class="stat-fill hp" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill atk" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill def" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPA</span><div class="stat-track"><div class="stat-fill spa" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill spd" style="width:0%"></div></div><span class="stat-val">--</span></div>
                             </div>
-                            <input type="text" class="card-input" placeholder="NOME/ID">
+                            <div class="search-wrap">
+                                <input type="text" class="card-input" placeholder="NOME / ID">
+                                <button class="btn-search" title="Buscar">🔍</button>
+                            </div>
                             <div class="type-badges"></div>
                         </div>
                     </article>
@@ -79,10 +91,48 @@
             <div class="versus-row">
                 <div class="dialogue-box" id="dialogue-text">Insira os nomes<br>e lute!</div>
                 <div class="battle-menu">
-                    <button class="menu-btn fight" id="btn-fight">⚔ LUTAR!</button>
-                    <button class="menu-btn" id="btn-bag">MOCHILA</button>
-                    <button class="menu-btn" id="btn-mon">POKÉMON</button>
-                    <button class="menu-btn" id="btn-run">FUGIR</button>
+                    <button class="menu-btn fight" id="btn-fight">⚔ Lutar!</button>
+                    <button class="menu-btn" id="btn-bag">Mochila</button>
+                    <button class="menu-btn" id="btn-mon">Pokémon</button>
+                    <button class="menu-btn" id="btn-run">Fugir</button>
+                </div>
+            </div>
+
+            <div class="battle-result" id="battle-result" style="display:none">
+                <div class="result-stripe"></div>
+                <div class="result-title-wrap" id="result-title-wrap">
+                    <div class="result-glow" id="result-glow"></div>
+                    <span class="result-corner tl">◤</span>
+                    <span class="result-corner tr">◥</span>
+                    <span class="result-corner bl">◣</span>
+                    <span class="result-corner br">◢</span>
+                    <div class="result-inner">
+                        <div class="result-eyebrow" id="result-eyebrow">★ BATALHA ENCERRADA ★</div>
+                        <div class="result-title" id="result-title"></div>
+                        <div class="result-divider"></div>
+                    </div>
+                </div>
+                <div class="result-scores">
+                    <div class="result-team red">
+                        <div class="result-team-label">TIME VERMELHO</div>
+                        <div class="result-team-score" id="score-red"></div>
+                        <div class="result-team-detail" id="detail-red"></div>
+                    </div>
+                    <div class="result-vs">VS</div>
+                    <div class="result-team blue">
+                        <div class="result-team-label">TIME AZUL</div>
+                        <div class="result-team-score" id="score-blue"></div>
+                        <div class="result-team-detail" id="detail-blue"></div>
+                    </div>
+                </div>
+
+                <div class="result-swap" id="result-swap" style="display:none">
+                    <div class="result-swap-title" id="result-swap-title"></div>
+                    <div class="result-swap-slots" id="result-swap-slots"></div>
+                </div>
+                <div class="result-actions">
+                    <button class="result-replay" id="btn-replay">🔄 JOGAR NOVAMENTE</button>
+                    <button class="result-swap-btn" id="btn-swap-toggle">🔀 TROCAR POKÉMON DO VENCEDOR</button>
                 </div>
             </div>
 
@@ -96,30 +146,42 @@
                 <div class="cards-row">
                     <article class="poke-card-slot" id="card-blue-1">
                         <div class="card-inner">
-                            <div class="card-top"><span class="poke-id">???</span></div>
+                            <div class="card-top"><span class="poke-id">???</span><button class="btn-lock" data-card="card-blue-1" title="Travar card">🔓</button></div>
                             <div class="sprite-wrapper">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
+                                <img src="assets/pokeball.png" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'" class="sprite-preview" alt="Vazio">
                             </div>
-                            <div class="hp-bar-wrap">
-                                <div class="hp-label">STATS:</div>
-                                <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
+                            <div class="stat-bars" id="card-blue-1-stats">
+                                <div class="stat-row"><span class="stat-label">HP</span><div class="stat-track"><div class="stat-fill hp" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill atk" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill def" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPA</span><div class="stat-track"><div class="stat-fill spa" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill spd" style="width:0%"></div></div><span class="stat-val">--</span></div>
                             </div>
-                            <input type="text" class="card-input" placeholder="NOME/ID">
+                            <div class="search-wrap">
+                                <input type="text" class="card-input" placeholder="NOME / ID">
+                                <button class="btn-search" title="Buscar">🔍</button>
+                            </div>
                             <div class="type-badges"></div>
                         </div>
                     </article>
 
                     <article class="poke-card-slot" id="card-blue-2">
                         <div class="card-inner">
-                            <div class="card-top"><span class="poke-id">???</span></div>
+                            <div class="card-top"><span class="poke-id">???</span><button class="btn-lock" data-card="card-blue-2" title="Travar card">🔓</button></div>
                             <div class="sprite-wrapper">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="sprite-preview" alt="Vazio">
+                                <img src="assets/pokeball.png" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'" class="sprite-preview" alt="Vazio">
                             </div>
-                            <div class="hp-bar-wrap">
-                                <div class="hp-label">STATS:</div>
-                                <div class="hp-track"><div class="hp-fill" style="width:0%"></div></div>
+                            <div class="stat-bars" id="card-blue-2-stats">
+                                <div class="stat-row"><span class="stat-label">HP</span><div class="stat-track"><div class="stat-fill hp" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill atk" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill def" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPA</span><div class="stat-track"><div class="stat-fill spa" style="width:0%"></div></div><span class="stat-val">--</span></div>
+                                <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill spd" style="width:0%"></div></div><span class="stat-val">--</span></div>
                             </div>
-                            <input type="text" class="card-input" placeholder="NOME/ID">
+                            <div class="search-wrap">
+                                <input type="text" class="card-input" placeholder="NOME / ID">
+                                <button class="btn-search" title="Buscar">🔍</button>
+                            </div>
                             <div class="type-badges"></div>
                         </div>
                     </article>
@@ -129,23 +191,411 @@
         </section>
 
         <section id="page-pokedex" class="page-section">
-            <h1>FILTROS DA POKÉDEX</h1>
-            <p>Conteúdo da Pokedex aqui...</p>
+            <header class="top-bar">
+                <h1>POKÉDEX — DADOS DOS LUTADORES</h1>
+            </header>
+
+            <div class="pdex-type-bar">
+                <button class="pdex-type-btn active" data-type="all">TODOS</button>
+                <button class="pdex-type-btn" data-type="fire"><span class="type fire">FOGO</span></button>
+                <button class="pdex-type-btn" data-type="water"><span class="type water">ÁGUA</span></button>
+                <button class="pdex-type-btn" data-type="grass"><span class="type grass">PLANTA</span></button>
+                <button class="pdex-type-btn" data-type="electric"><span class="type electric">ELÉTRICO</span></button>
+                <button class="pdex-type-btn" data-type="psychic"><span class="type psychic">PSÍQUICO</span></button>
+                <button class="pdex-type-btn" data-type="ice"><span class="type ice">GELO</span></button>
+                <button class="pdex-type-btn" data-type="dragon"><span class="type dragon">DRAGÃO</span></button>
+                <button class="pdex-type-btn" data-type="dark"><span class="type dark">SOMBRIO</span></button>
+                <button class="pdex-type-btn" data-type="fairy"><span class="type fairy">FADA</span></button>
+                <button class="pdex-type-btn" data-type="poison"><span class="type poison">VENENO</span></button>
+                <button class="pdex-type-btn" data-type="fighting"><span class="type fighting">LUTADOR</span></button>
+                <button class="pdex-type-btn" data-type="rock"><span class="type rock">PEDRA</span></button>
+                <button class="pdex-type-btn" data-type="ground"><span class="type ground">TERRA</span></button>
+                <button class="pdex-type-btn" data-type="ghost"><span class="type ghost">FANTASMA</span></button>
+                <button class="pdex-type-btn" data-type="steel"><span class="type steel">METAL</span></button>
+                <button class="pdex-type-btn" data-type="normal"><span class="type normal">NORMAL</span></button>
+                <button class="pdex-type-btn" data-type="bug"><span class="type bug">INSETO</span></button>
+                <button class="pdex-type-btn" data-type="flying"><span class="type flying">VOADOR</span></button>
+            </div>
+
+            <div class="pdex-status" id="pdex-status">Carregando Pokédex...</div>
+
+            <div class="pokedex-grid pdex-grid-evo" id="pdex-grid"></div>
+
         </section>
 
         <section id="page-options" class="page-section">
-            <h1>CONFIGURAÇÕES</h1>
-            <p>Opções do jogo...</p>
+
+            <header class="top-bar">
+                <h1>Pokédek Battle Simulator - Configurações</h1>
+            </header>
+
+            <div class="opt-panel">
+                <h3 class="opt-panel-title">Audio</h3>
+
+                <div class="opt-row" style="margin-bottom:12px">
+                    <span class="opt-label">Efeitos Sonoros</span>
+                    <div class="opt-btns">
+                        <button class="opt-btn active" data-group="sfx" data-value="on">Ligado</button>
+                        <button class="opt-btn"        data-group="sfx" data-value="off">Desligado</button>
+                    </div>
+                </div>
+
+                <div class="opt-row" style="margin-bottom:12px">
+                    <span class="opt-label">Musica</span>
+                    <div class="opt-btns">
+                        <button class="opt-btn active" data-group="bgm" data-value="on">Ligado</button>
+                        <button class="opt-btn"        data-group="bgm" data-value="off">Desligado</button>
+                    </div>
+                </div>
+
+                <div class="audio-row">
+                    <span class="audio-icon">🔊</span>
+                    <div class="audio-track">
+                        <div class="audio-fill" id="vol-fill"></div>
+                        <div class="audio-thumb" id="vol-thumb" style="left:50%"></div>
+                        <input type="range" class="audio-range" id="vol-slider" min="0" max="100" value="50">
+                    </div>
+                    <span class="audio-pct" id="vol-value">50%</span>
+                </div>
+
+                <div class="music-box">
+                    <div class="music-box-left">
+                        <span class="music-note-icon">♪</span>
+                        <div class="music-info">
+                            <div class="music-title" id="music-title">Title Screen</div>
+                            <div class="music-bars" id="music-bars">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="music-controls">
+                        <button class="music-btn" id="btn-prev">◀</button>
+                        <button class="music-btn" id="btn-next">▶</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="opt-panel">
+                <h3 class="opt-panel-title">Interface</h3>
+
+                <div class="opt-row">
+                    <span class="opt-label">Tela Cheia</span>
+                    <div class="opt-btns">
+                        <button class="opt-btn active" data-group="fullscreen" data-value="on">Sim</button>
+                        <button class="opt-btn"        data-group="fullscreen" data-value="off">Não</button>
+                    </div>
+                </div>
+
+                <div class="opt-row">
+                    <span class="opt-label">Animações De Texto</span>
+                    <div class="opt-btns">
+                        <button class="opt-btn active" data-group="textanim" data-value="on">Ligado</button>
+                        <button class="opt-btn"        data-group="textanim" data-value="off">Desligado</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="opt-dialogue" id="opt-dialogue">
+                Selecione uma opção para ver a descrição.<br>
+                Use os controles para ajustar as preferências do simulador.
+                <span class="opt-arrow">▼</span>
+            </div>
+
+            <div class="opt-actions">
+                <button class="opt-action-btn" id="btn-opt-save">Salvar</button>
+                <button class="opt-action-btn" id="btn-opt-default">Padrão</button>
+                <button class="opt-action-btn" id="btn-opt-back">Voltar</button>
+            </div>
+
+</section>
+
+<section id="page-about" class="page-section" aria-labelledby="about-heading">
+    
+    <header class="top-bar" style="background: var(--poke-red);">
+        <h1 id="about-heading">? SOBRE O PROJETO</h1>
+    </header>
+
+    <div class="ab-hero" aria-label="Apresentação do projeto">
+        <div class="ab-hero-glow" aria-hidden="true"></div>
+        <span class="ab-hero-corner tl" aria-hidden="true">◤</span>
+        <span class="ab-hero-corner tr" aria-hidden="true">◥</span>
+        <span class="ab-hero-corner bl" aria-hidden="true">◣</span>
+        <span class="ab-hero-corner br" aria-hidden="true">◢</span>
+        <div class="ab-hero-inner">
+            <p class="ab-hero-eyebrow" aria-label="Pokédex Entry número 000">★ &nbsp; POKÉDEX ENTRY #000 &nbsp; ★</p>
+            <h2 class="ab-hero-title">THE SIDE DEX<br>BATTLE</h2>
+            <div class="ab-hero-divider" aria-hidden="true"></div>
+            <p class="ab-hero-sub">SIMULADOR DE BATALHAS 2V2</p>
+           <button class="ab-hero-press" type="button" id="press-start">— PRESS START TO PLAY — </button>
+        </div>
+    </div>
+
+   <article class="ab-card" aria-labelledby="about-heading">
+
+        <div class="ab-card-left">
+            <p class="ab-dex-num" aria-label="Número da Pokédex">#000</p>
+            <div class="ab-sprite" role="img" aria-label="Sprite do projeto">⚔️</div>
+            <p class="ab-name">THE SIDE<br>DEX BATTLE</p>
+            <div class="ab-types" aria-label="Tipos do projeto">
+                <span class="ab-type digital">Digital</span>
+                <span class="ab-type retro">Retro</span>
+                <span class="ab-type battle">Battle</span>
+            </div>
+        </div>
+
+        <div class="ab-card-right" role="region" aria-label="Estatísticas do projeto">
+            <div role="list" aria-label="Stats base">
+
+                <div class="ab-stat-row" role="listitem">
+                    <span class="ab-stat-label">HP — DIVERSÃO</span>
+                    <div class="ab-stat-bar-wrap" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                        <div class="ab-stat-bar hp"></div>
+                    </div>
+                    <span class="ab-stat-val">220</span>
+                </div>
+
+                <div class="ab-stat-row" role="listitem">
+                    <span class="ab-stat-label">ATK — BATALHA</span>
+                    <div class="ab-stat-bar-wrap" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                        <div class="ab-stat-bar atk"></div>
+                    </div>
+                    <span class="ab-stat-val">238</span>
+                </div>
+
+                <div class="ab-stat-row" role="listitem">
+                    <span class="ab-stat-label">DEF — BUGS</span>
+                    <div class="ab-stat-bar-wrap" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+                        <div class="ab-stat-bar def"></div>
+                    </div>
+                    <span class="ab-stat-val">180</span>
+                </div>
+
+                <div class="ab-stat-row" role="listitem">
+                    <span class="ab-stat-label">SP.ATK — UI</span>
+                    <div class="ab-stat-bar-wrap" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                        <div class="ab-stat-bar spatk"></div>
+                    </div>
+                    <span class="ab-stat-val">213</span>
+                </div>
+
+                <div class="ab-stat-row" role="listitem">
+                    <span class="ab-stat-label">SPD — SPA</span>
+                    <div class="ab-stat-bar-wrap" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                        <div class="ab-stat-bar spd"></div>
+                    </div>
+                    <span class="ab-stat-val">225</span>
+                </div>
+
+                <div class="ab-stat-row" role="listitem">
+                    <span class="ab-stat-label">UX — ESTILO</span>
+                    <div class="ab-stat-bar-wrap" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+                        <div class="ab-stat-bar ux"></div>
+                    </div>
+                    <span class="ab-stat-val">245</span>
+                </div>
+
+            </div>
+
+            <p class="ab-flavor">
+                "Criatura rara. Habita o espaço entre linhas de código e pixels perdidos.
+                Emite sons de cliques e batalhas 2v2. Considerada indomável por professores Pokémon."
+            </p>
+        </div>
+
+    </article>
+
+    <div class="ab-grid-2">
+
+        <section class="ab-panel" aria-labelledby="ab-moves-title">
+            <div class="ab-panel-head">
+                <span aria-hidden="true">📋</span>
+                <span id="ab-moves-title">MOVIMENTOS APRENDIDOS</span>
+            </div>
+            <div class="ab-panel-body">
+                <div class="ab-moves" role="list">
+
+                    <div class="ab-move" role="listitem">
+                        <span class="ab-move-icon" aria-hidden="true">⚔️</span>
+                        <div class="ab-move-info">
+                            <span class="ab-move-name">BATALHA 2V2</span>
+                            <span class="ab-move-desc">Combate por turnos com 2 Pokémon de cada lado</span>
+                        </div>
+                    </div>
+
+                    <div class="ab-move" role="listitem">
+                        <span class="ab-move-icon" aria-hidden="true">📖</span>
+                        <div class="ab-move-info">
+                            <span class="ab-move-name">POKÉDEX</span>
+                            <span class="ab-move-desc">Consulta fichas completas via PokéAPI</span>
+                        </div>
+                    </div>
+
+                    <div class="ab-move" role="listitem">
+                        <span class="ab-move-icon" aria-hidden="true">🎯</span>
+                        <div class="ab-move-info">
+                            <span class="ab-move-name">SELEÇÃO DE TIME</span>
+                            <span class="ab-move-desc">Monte seu squad antes da batalha</span>
+                        </div>
+                    </div>
+
+                    <div class="ab-move" role="listitem">
+                        <span class="ab-move-icon" aria-hidden="true">⚡</span>
+                        <div class="ab-move-info">
+                            <span class="ab-move-name">SPA ROUTING</span>
+                            <span class="ab-move-desc">Zero reload — navegação instantânea</span>
+                        </div>
+                    </div>
+
+                    <div class="ab-move" role="listitem">
+                        <span class="ab-move-icon" aria-hidden="true">🎮</span>
+                        <div class="ab-move-info">
+                            <span class="ab-move-name">INTERFACE RETRO</span>
+                            <span class="ab-move-desc">Visual GameBoy com pixel art e paleta clássica</span>
+                        </div>
+                    </div>
+
+                    <div class="ab-move" role="listitem">
+                        <span class="ab-move-icon" aria-hidden="true">📱</span>
+                        <div class="ab-move-info">
+                            <span class="ab-move-name">RESPONSIVO</span>
+                            <span class="ab-move-desc">Adapta como Ditto — funciona em qualquer tela</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
-        <section id="page-about" class="page-section">
-            <h1>? SOBRE O PROJETO</h1>
-            <p>Simulador de batalha PokeAPI.</p>
+        <section class="ab-panel" aria-labelledby="ab-tech-title">
+            <div class="ab-panel-head">
+                <span aria-hidden="true">🧪</span>
+                <span id="ab-tech-title">DNA DO PROJETO — TECNOLOGIAS</span>
+            </div>
+            <div class="ab-panel-body">
+
+                <div class="ab-tech-grid" role="list" aria-label="Tecnologias utilizadas">
+                    <div class="ab-tech" role="listitem"><span class="ab-dot yellow" aria-hidden="true"></span>HTML 5</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot blue"   aria-hidden="true"></span>CSS 3</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot green"  aria-hidden="true"></span>JavaScript ES6+</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot red"    aria-hidden="true"></span>PokéAPI REST</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot yellow" aria-hidden="true"></span>Fetch Async</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot blue"   aria-hidden="true"></span>SPA Pattern</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot green"  aria-hidden="true"></span>Sem Frameworks</div>
+                    <div class="ab-tech" role="listitem"><span class="ab-dot green"  aria-hidden="true"></span>Sem Dependências</div>
+                </div>
+
+                <div class="ab-tech-note" role="note">
+                    Construído com HTML, CSS e JS puros —<br>
+                    zero frameworks, zero dependências externas.<br>
+                    <span>Velocidade de um Jolteon.</span>
+                </div>
+
+            </div>
         </section>
 
+    </div>
+
+    <section class="ab-panel" aria-labelledby="ab-team-title">
+        <div class="ab-panel-head">
+            <span aria-hidden="true">👥</span>
+            <span id="ab-team-title">TREINADORES — EQUIPE DE CAMPO</span>
+        </div>
+        <div class="ab-panel-body">
+            <div class="ab-trainers" role="list">
+
+                <article class="ab-trainer" role="listitem" aria-label="Jorge Assunção Neto">
+                    <div class="ab-trainer-avatar" aria-hidden="true">🏗️</div>
+                    <p class="ab-trainer-name">Jorge<br>Assunção Neto</p>
+                    <p class="ab-trainer-area">Arquitetura &amp; Deploy</p>
+                    <p class="ab-trainer-task">Página principal (index.html),<br>testes &amp; deploy do projeto</p>
+                    <span class="ab-trainer-badge dark">LEAD DEV</span>
+                </article>
+
+                <article class="ab-trainer" role="listitem" aria-label="Ana Beatriz Carvalho">
+                    <div class="ab-trainer-avatar" aria-hidden="true">⚔️</div>
+                    <p class="ab-trainer-name">Ana Beatriz<br>Carvalho</p>
+                    <p class="ab-trainer-area">PokéAPI &amp; Batalha</p>
+                    <p class="ab-trainer-task">Integração PokéAPI &amp;<br>lógica de batalha</p>
+                    <span class="ab-trainer-badge red">BATTLE DEV</span>
+                </article>
+
+                <article class="ab-trainer" role="listitem" aria-label="André Luiz Gonçalves">
+                    <div class="ab-trainer-avatar" aria-hidden="true">🧩</div>
+                    <p class="ab-trainer-name">André Luiz<br>Gonçalves</p>
+                    <p class="ab-trainer-area">PokéAPI &amp; Batalha</p>
+                    <p class="ab-trainer-task">Integração PokéAPI &amp;<br>lógica de batalha</p>
+                    <span class="ab-trainer-badge red">BATTLE DEV</span>
+                </article>
+
+                <article class="ab-trainer" role="listitem" aria-label="Victoria Ingrid Oliveira">
+                    <div class="ab-trainer-avatar" aria-hidden="true">📖</div>
+                    <p class="ab-trainer-name">Victoria Ingrid<br>Oliveira</p>
+                    <p class="ab-trainer-area">Página SOBRE</p>
+                    <p class="ab-trainer-task">Desenvolvimento e design<br>da página Sobre</p>
+                    <span class="ab-trainer-badge">UI DEV</span>
+                </article>
+
+                <article class="ab-trainer" role="listitem" aria-label="Agda Barbosa de Oliveira">
+                    <div class="ab-trainer-avatar" aria-hidden="true">📘</div>
+                    <p class="ab-trainer-name">Agda Barbosa<br>de Oliveira</p>
+                    <p class="ab-trainer-area">Página POKÉDEX</p>
+                    <p class="ab-trainer-task">Desenvolvimento completo<br>da página Pokédex</p>
+                    <span class="ab-trainer-badge">DEX DEV</span>
+                </article>
+
+                <article class="ab-trainer" role="listitem" aria-label="Luciano Oliveira Silva Júnior">
+                    <div class="ab-trainer-avatar" aria-hidden="true">⚙️</div>
+                    <p class="ab-trainer-name">Luciano Oliveira<br>Silva Júnior</p>
+                    <p class="ab-trainer-area">Página OPÇÕES</p>
+                    <p class="ab-trainer-task">Desenvolvimento completo<br>da página de Opções</p>
+                    <span class="ab-trainer-badge">OPTIONS DEV</span>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="ab-panel" aria-labelledby="ab-credits-title">
+        <div class="ab-panel-head">
+            <span aria-hidden="true">⭐</span>
+            <span id="ab-credits-title">CRÉDITOS &amp; RECONHECIMENTOS</span>
+        </div>
+        <div class="ab-panel-body" role="list">
+
+            <div class="ab-credits-row" role="listitem">
+                <span class="ab-credits-icon" aria-hidden="true">🏆</span>
+                <p class="ab-credits-text"><strong>Nintendo / Game Freak / Creatures</strong> — Criadores do universo Pokémon. Todo lore, nomes e mecânicas pertencem a eles. Tributo não-comercial feito com amor.</p>
+            </div>
+
+            <div class="ab-credits-row" role="listitem">
+                <span class="ab-credits-icon" aria-hidden="true">🌐</span>
+                <p class="ab-credits-text"><strong>PokéAPI (pokeapi.co)</strong> — A Pokédex definitiva em REST. Sem ela, nossa Pokédex seria um caderno vazio. Open source e mantida pela comunidade.</p>
+            </div>
+
+            <div class="ab-credits-row" role="listitem">
+                <span class="ab-credits-icon" aria-hidden="true">📚</span>
+                <p class="ab-credits-text"><strong>MDN Web Docs &amp; web.dev</strong> — A verdadeira Pokédex do dev web. Consultada às 3h da manhã mais vezes do que gostaríamos de admitir.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="ab-footer" role="contentinfo">
+        THE SIDE DEX BATTLE — v1.0 &nbsp;|&nbsp;
+        POKÉMON © NINTENDO / GAME FREAK &nbsp;|&nbsp;
+        NENHUM POKÉMON FOI FERIDO NO DESENVOLVIMENTO DESTE SITE
+    </footer>
+
+</section>
     </main>
 </div>
 
+<script src="js/music.js"></script>
+<script src="js/sfx.js"></script>
 <script src="js/script.js"></script>
+<script src="js/opcoes.js"></script>
+<script src="js/pokedex.js"></script>
 </body>
 </html>
