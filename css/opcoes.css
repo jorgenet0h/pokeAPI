@@ -317,4 +317,9 @@
     .opt-label { font-size: 0.7rem; }
     .opt-dialogue { font-size: 0.7rem; line-height: 2.2; }
     .opt-btn { font-size: 0.55rem; }
+
+    .opt-row:has([data-group="fullscreen"]),
+    .audio-row {
+        display: none;
+    }
 }
