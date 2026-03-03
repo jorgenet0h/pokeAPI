@@ -170,6 +170,8 @@ function attachInputSearch(cardId) {
         typeText(`Buscando\n${val.toUpperCase()}...`);
         try {
             const data = await fetchPokemon(val);
+            window.PDEX_CACHE = window.PDEX_CACHE || {};
+            window.PDEX_CACHE[data.id] = data; 
             lastSearched = data.name;
             input.value  = data.name.toUpperCase();
             renderCard(data, cardId);
@@ -232,6 +234,8 @@ async function loadRandom(cardId) {
     if (lockedCards.has(cardId)) return '__locked__';
     try {
         const data = await fetchPokemon(randomId());
+        window.PDEX_CACHE = window.PDEX_CACHE || {};
+        window.PDEX_CACHE[data.id] = data;
         renderCard(data, cardId);
         updatePokedexCard(data, cardId);
         return data.name.toUpperCase();
@@ -565,3 +569,22 @@ document.getElementById('btn-replay')?.addEventListener('click', resetBattle);
 document.getElementById('press-start')?.addEventListener('click', () => {
     document.querySelector('.nav-btn[data-target="page-battle"]')?.click();
 });
+
+async function autoFillIfEmpty() {
+    const allEmpty = ['card-red-1','card-red-2','card-blue-1','card-blue-2']
+        .every(id => !document.getElementById(id)?.dataset.pokemonId);
+    if (!allEmpty) return;
+    typeText('Carregando\nPok\u00e9mon...');
+    await Promise.all([
+        loadRandom('card-red-1'),
+        loadRandom('card-red-2'),
+        loadRandom('card-blue-1'),
+        loadRandom('card-blue-2'),
+    ]);
+    typeText('Times prontos!\nClique em LUTAR!');
+}
+
+document.addEventListener('DOMContentLoaded', () => autoFillIfEmpty());
+document.querySelectorAll('.nav-btn[data-target="page-battle"]').forEach(btn =>
+    btn.addEventListener('click', () => setTimeout(autoFillIfEmpty, 50))
+);
